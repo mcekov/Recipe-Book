@@ -6,6 +6,7 @@ bin-release/
 
 # Other files and folders
 .settings/
+start_project_how_to.txt
 
 # Executables
 *.swf

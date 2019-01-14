@@ -1,0 +1,8 @@
+{#error}
+    <div class="alert alert-danger">{error}</div>
+{/error}
+
+{#errors}
+    <div class="alert alert-danger">{text}</div>
+    {:else}
+{/errors}

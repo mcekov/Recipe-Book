@@ -1,0 +1,71 @@
+{>"layout" /} 
+{<body} 
+    {#user}
+        <button type="button" class="btn btn-danger btn-block" data-toggle="modal" data-target="#formModal">Add recipe</button>
+        <br />
+    {:else}
+    <h2>You must be logged to post recipes!</h2>
+{/user}
+    {#recipes}
+        <div class="card card-block bg-light">
+    <h4>{name}
+        <button class="btn btn-outline-primary float-right" data-toggle="collapse" href="#recipe_{id}" role="button" aria-expanded="false"
+            aria-controls="recipe_{id}">
+            <span class="oi oi-chevron-bottom"></span>
+        </button>
+    </h4>
+    <div class="collapse" id="recipe_{id}">
+        <br />
+        <br />
+        <p>
+            <strong>Ingredients: </strong>{ingredients}</p>
+        <p>
+            <strong>Directions: </strong>{directions}</p>
+        <br />
+        <hr>
+
+        <a class="btn btn-primary btn-block mb-2" href="/edit/{id}">
+            <span class="oi oi-pencil"></span> Edit</a>
+        <form method="post" action="/delete/{id}?_method=DELETE">
+            <input type="hidden" name="_method" value="DELETE" />
+            <button type="submit" class="btn btn-danger btn-block" value="DELETE">
+                <span class="oi oi-cog"></span> DELETE</button>
+        </form>
+
+    </div>
+</div>
+    {/recipes}
+       <!--Add Modal Form Recipes -->
+<div class="modal fade" id="formModal" tabindex="-1" role="dialog" aria-labelledby="formModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <form method="post" action="/add">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Add Recipe</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="recipeName">Recipe Name</label>
+                        <input class="form-control required" id="recipeName" placeholder="Enter recipe name" name="name">
+                    </div>
+                    <div class="form-group">
+                        <label for="ingredientsText">Ingredients</label>
+                        <textarea id="ingredientsText" class="form-control required" name="ingredients"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="directionsText">Directions</label>
+                        <textarea id="directionsText" class="form-control required" name="directions"></textarea>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <input type="submit" class="btn btn-primary" value="Save" />
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{/body}

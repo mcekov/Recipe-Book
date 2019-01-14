@@ -1,0 +1,17 @@
+{>"layout" /}
+{<body}
+    <div class="card card-body">
+        <img src="/img/logo.png" alt="logo" class="logo">
+        <h3 class="text-center">Account Login</h3>
+        <form action="/users/login" method="post">
+        <hr>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" name="email" required>
+                <label for="password">Password</label>
+                <input type="password" class="form-control" name="password" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+{/body}

@@ -1,0 +1,14 @@
+body {
+  background: #f9f9f9;
+}
+
+.card {
+  border-radius: 3px;
+  padding: 15px !important;
+  margin-bottom: 10px;
+}
+
+.logo {
+  width: 130px;
+  margin: auto;
+}
