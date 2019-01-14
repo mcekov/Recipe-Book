@@ -1,6 +1,7 @@
 # Recipe-Book
 Simple app for storing recipes with user authorization. 
 Used libs:
+```
 "dependencies": {
     "bcryptjs": "^2.4.3",
     "body-paresr": "*",
@@ -16,3 +17,4 @@ Used libs:
     "passport": "^0.4.0",
     "passport-local": "^1.0.0"
   }
+```
